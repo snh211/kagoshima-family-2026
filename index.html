@@ -171,6 +171,13 @@ body{background:radial-gradient(ellipse at top left,rgba(255,225,171,.22),transp
 @keyframes xmas-glimmer{0%,100%{opacity:.5;filter:brightness(.82)}50%{opacity:1;filter:brightness(1.26)}}
 @keyframes xmas-shimmer{from{background-position:0% center}to{background-position:100% center}}
 @keyframes xmas-fall{0%{transform:translate3d(0,-10px,0);opacity:0}10%{opacity:.85}80%{opacity:.65}100%{transform:translate3d(22px,105vh,0);opacity:0}}
+</style><style id="tab-anchor-alignment">
+/* Precise fallback for direct hash links, browser Back, and keyboard navigation. */
+:root { --sticky-total: 135px; }
+html { scroll-padding-top: var(--sticky-total); }
+.g-section { scroll-margin-top: var(--sticky-total); }
+.g-section .g-kicker,.g-section h2 { scroll-margin-top: var(--sticky-total); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style></head>
 <body>
 <header class="header">
@@ -255,20 +262,101 @@ body{background:radial-gradient(ellipse at top left,rgba(255,225,171,.22),transp
     <p>항공권과 3박 숙소는 카드 결제 완료. 다카치오 골프는 10시경 희망으로 예약 요청 중이에요. 카트 진입·요금·시각은 최종 확정 내용을 다시 확인해 주세요.</p>
   </footer>
 </main>
-<script>
-(function(){
-  const links=[...document.querySelectorAll('.tabbar a')];
-  if(!links.length)return;
-  const ids=links.map(a=>a.getAttribute('href').slice(1));
-  const sections=ids.map(id=>document.getElementById(id)).filter(Boolean);
-  if(!('IntersectionObserver' in window))return;
-  const io=new IntersectionObserver(entries=>{
-    const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio);
-    if(!visible.length)return;
-    const current=visible[0].target.id;
-    links.forEach(a=>a.classList.toggle('g-tab-active',a.getAttribute('href')==='#'+current));
-  },{rootMargin:'-145px 0px -55% 0px',threshold:[0,.1,.5]});
-  sections.forEach(s=>io.observe(s));
+<script id="aligned-tab-navigation">
+(function () {
+  const bar = document.querySelector('.tabbar-wrap');
+  const header = document.querySelector('.header');
+  const nav = bar && bar.querySelector('.tabbar');
+  if (!bar || !header || !nav) return;
+  const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
+  const entries = links.map(link => ({
+    link, section: document.getElementById(link.hash.slice(1))
+  })).filter(item => item.section);
+  if (!entries.length) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function offset() {
+    // Measure the actual sticky UI on each click: phone width and fonts change its height.
+    return Math.ceil(header.getBoundingClientRect().height
+      + bar.getBoundingClientRect().height + 10);
+  }
+
+  function sectionStart(section) {
+    // Scroll the visible section eyebrow/title, not the outer box with 45–55px padding.
+    return section.querySelector('.g-kicker') || section.querySelector('h2') || section;
+  }
+
+  function select(id, centerTab) {
+    entries.forEach(({ link, section }) => {
+      const active = section.id === id;
+      link.classList.toggle('g-tab-active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    if (centerTab) {
+      const item = entries.find(entry => entry.section.id === id);
+      if (item) {
+        const tab = item.link;
+        const left = tab.offsetLeft + tab.offsetWidth / 2 - nav.clientWidth / 2;
+        nav.scrollTo({ left: Math.max(0, left),
+          behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      }
+    }
+  }
+
+  function goTo(id, animated) {
+    const target = entries.find(entry => entry.section.id === id);
+    if (!target) return false;
+    const label = sectionStart(target.section);
+    const top = Math.max(0, window.scrollY
+      + label.getBoundingClientRect().top - offset());
+    select(id, true);
+    window.scrollTo({ top,
+      behavior: animated && !reduceMotion.matches ? 'smooth' : 'instant' });
+    return true;
+  }
+
+  links.forEach(link => link.addEventListener('click', event => {
+    const id = link.hash.slice(1);
+    if (!entries.some(entry => entry.section.id === id)) return;
+    event.preventDefault();
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    goTo(id, true);
+  }));
+
+  let scrollScheduled = false;
+  function updateActive() {
+    scrollScheduled = false;
+    const limit = offset() + 18;
+    let active = entries[0].section.id;
+    entries.forEach(({ section }) => {
+      if (sectionStart(section).getBoundingClientRect().top <= limit)
+        active = section.id;
+    });
+    select(active, false);
+  }
+  window.addEventListener('scroll', () => {
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+    requestAnimationFrame(updateActive);
+  }, { passive: true });
+
+  function syncFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!goTo(id, false)) updateActive();
+  }
+  window.addEventListener('popstate', syncFromHash);
+  window.addEventListener('hashchange', syncFromHash);
+  window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--sticky-total', offset() + 'px');
+    updateActive();
+  }, { passive: true });
+  document.documentElement.style.setProperty('--sticky-total', offset() + 'px');
+  if (location.hash) {
+    // Correct browser's native anchor position once sticky UI is laid out.
+    requestAnimationFrame(syncFromHash);
+    window.addEventListener('load', syncFromHash, { once: true });
+  } else updateActive();
 })();
 </script></body>
 </html>
