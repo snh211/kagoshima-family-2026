@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#12352d">
+<meta name="theme-color" content="#204b39">
 <title>가고시마 가족여행 | 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap');
@@ -135,21 +135,57 @@ main,.g-section,.wrap{min-width:0}
 #guide-shopping .g-photo-error small,#guide-japan-shopping .g-photo-error small{display:block;font-size:10px;line-height:1.4;font-weight:600;margin-top:7px;color:#667969}
 @media(min-width:760px){#guide-shopping .g-shop-card,#guide-japan-shopping .g-trend-card{flex:0 0 calc(50% - 7px);max-width:calc(50% - 7px);grid-template-columns:minmax(120px,40%) minmax(0,1fr)}}
 @media(max-width:385px){#guide-shopping .g-shop-card,#guide-japan-shopping .g-trend-card{grid-template-columns:minmax(100px,33%) minmax(0,1fr)}#guide-shopping .g-card-inside,#guide-japan-shopping .g-trend-body{padding:12px 10px}#guide-shopping .g-card-inside h3,#guide-japan-shopping .g-trend-body h3{font-size:14px}.k-shop-explain p{font-size:11px}}
+</style><style id="christmas-2026">
+:root{--bg:#fdf8f0;--card:#fffefa;--green:#164534;--warm:#ffdf93;--orange:#bb4c46}
+html,body{max-width:100%;overflow-x:clip}
+body{background:radial-gradient(ellipse at top left,rgba(255,225,171,.22),transparent 37%),#fdf8f0}
+.header{border-bottom:2px solid #d9b36d;background:rgba(254,251,243,.96)}
+.head-badge{background:linear-gradient(120deg,#942b33,#c34e4b);border:1px solid #eac387;box-shadow:0 2px 12px rgba(154,51,50,.2)}
+.tabbar-wrap{border-bottom:1px solid #d8c4a1;background:rgba(22,61,46,.98)}
+.tabbar a{background:rgba(255,255,255,.96);border-color:#e2c895;color:#24543f}
+.tabbar a.g-tab-active,.tabbar a:hover{background:#a93639;border-color:#e0b46e;color:#fff}
+.hero{background:#183e31}
+.hero img{filter:saturate(1.3) brightness(1.05)}
+.hero:after{background:linear-gradient(180deg,rgba(11,27,23,.08),rgba(11,27,23,.19) 36%,rgba(7,21,16,.83) 100%)}
+.hero-content{z-index:5}
+.xmas-trip-badge{display:inline-block;border-radius:999px;background:linear-gradient(100deg,rgba(148,34,43,.91),rgba(197,112,57,.9));border:1px solid #f7d5a1;color:#fff8ea;padding:9px 14px;box-shadow:0 0 20px rgba(255,210,132,.45);font-size:11px;letter-spacing:.09em;font-weight:900;margin-bottom:15px}
+.hero h1 .accent{background:linear-gradient(115deg,#fff1c9,#ffd07a,#fff6d7);background-size:220% auto;color:transparent;background-clip:text;-webkit-background-clip:text;animation:xmas-shimmer 5s ease-in-out infinite alternate}
+.hero-sub{color:#fff8e7}
+.hero-tags span{border-color:rgba(255,229,167,.75);background:rgba(34,67,53,.67);color:#fff4df}
+.xmas-lights{z-index:4;position:absolute;top:0;left:0;right:0;height:73px;display:flex;justify-content:space-around;gap:2px;padding:0 9px;pointer-events:none}
+.xmas-lights:before{content:"";position:absolute;left:-2%;right:-2%;top:0;height:35px;border-bottom:2px solid rgba(255,220,150,.69);border-radius:0 0 50% 50%}
+.xmas-bulb{position:relative;top:33px;width:9px;height:15px;flex:0 0 9px;border-radius:48% 48% 55% 55%;background:#ffdd91;box-shadow:0 0 12px 4px rgba(255,213,129,.64);transform:rotate(8deg);animation:xmas-glimmer 2.7s ease-in-out infinite alternate;animation-delay:var(--delay)}
+.xmas-bulb:nth-child(3n){background:#ff8b72;box-shadow:0 0 10px 3px rgba(246,109,99,.52)}
+.xmas-bulb:nth-child(3n+2){background:#bbefc6;box-shadow:0 0 9px 3px rgba(143,230,177,.58)}
+.xmas-snow{z-index:3;position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.xmas-snow i{position:absolute;left:calc(var(--i) * 6.65% + 0.3%);top:-8%;font-size:calc(11px + var(--i) * .28px);opacity:.75;color:#fff8e5;text-shadow:0 0 12px #fff;animation:xmas-fall var(--duration) linear infinite;animation-delay:var(--delay);font-style:normal}
+.g-section h2{color:#24533e}.g-section h2:after{content:" ✨";font-size:.46em;vertical-align:top;color:#c89142}
+.g-kicker{color:#a54c43}
+.k-day-head{background:linear-gradient(120deg,#173f32,#347353);border-bottom:3px solid #d7b16c}
+.k-flight,.k-stay,.k-golf-card,.g-feature-card,.g-restaurant,.k-day,.k-budget-box,.g-shop-card,.g-trend-card{border-color:#e6d9bd!important;box-shadow:0 7px 22px rgba(61,72,47,.08)}
+.k-btn,.g-inline-btn{background:#285d46}
+.k-budget-main{background:linear-gradient(110deg,#174331,#296c4b 67%,#963d42)}
+.k-stay-head{background:linear-gradient(110deg,#fff8ed,#edf4e9)}
+.g-small-link{color:#31724d}
+@media(prefers-reduced-motion:reduce){.hero h1 .accent,.xmas-bulb,.xmas-snow i{animation:none!important}}
+@keyframes xmas-glimmer{0%,100%{opacity:.5;filter:brightness(.82)}50%{opacity:1;filter:brightness(1.26)}}
+@keyframes xmas-shimmer{from{background-position:0% center}to{background-position:100% center}}
+@keyframes xmas-fall{0%{transform:translate3d(0,-10px,0);opacity:0}10%{opacity:.85}80%{opacity:.65}100%{transform:translate3d(22px,105vh,0);opacity:0}}
 </style></head>
 <body>
 <header class="header">
   <div class="wrap head-inner">
-    <div class="brand">Kagoshima <span>Family Trip</span></div>
-    <div class="head-badge">2026.12.25 – 12.28</div>
+    <div class="brand">🎄 Kagoshima <span>Family Trip</span></div>
+    <div class="head-badge">✨ 12.25 – 12.28</div>
   </div>
 </header>
 
-<section class="hero" id="top">
+<section class="hero" id="top"><div class="xmas-lights" aria-hidden="true"><i class="xmas-bulb" style="--ix:0;--delay:-0s"></i><i class="xmas-bulb" style="--ix:1;--delay:-0.4s"></i><i class="xmas-bulb" style="--ix:2;--delay:-0.8s"></i><i class="xmas-bulb" style="--ix:3;--delay:-1.2000000000000002s"></i><i class="xmas-bulb" style="--ix:4;--delay:-1.6s"></i><i class="xmas-bulb" style="--ix:5;--delay:-0s"></i><i class="xmas-bulb" style="--ix:6;--delay:-0.4s"></i><i class="xmas-bulb" style="--ix:7;--delay:-0.8s"></i><i class="xmas-bulb" style="--ix:8;--delay:-1.2000000000000002s"></i><i class="xmas-bulb" style="--ix:9;--delay:-1.6s"></i><i class="xmas-bulb" style="--ix:10;--delay:-0s"></i><i class="xmas-bulb" style="--ix:11;--delay:-0.4s"></i><i class="xmas-bulb" style="--ix:12;--delay:-0.8s"></i><i class="xmas-bulb" style="--ix:13;--delay:-1.2000000000000002s"></i><i class="xmas-bulb" style="--ix:14;--delay:-1.6s"></i><i class="xmas-bulb" style="--ix:15;--delay:-0s"></i><i class="xmas-bulb" style="--ix:16;--delay:-0.4s"></i><i class="xmas-bulb" style="--ix:17;--delay:-0.8s"></i><i class="xmas-bulb" style="--ix:18;--delay:-1.2000000000000002s"></i><i class="xmas-bulb" style="--ix:19;--delay:-1.6s"></i></div><div class="xmas-snow" aria-hidden="true"><i style="--i:0;--duration:15s;--delay:-0s">❄</i><i style="--i:1;--duration:17s;--delay:-2.4s">✦</i><i style="--i:2;--duration:19s;--delay:-4.8s">✦</i><i style="--i:3;--duration:21s;--delay:-7.199999999999999s">❄</i><i style="--i:4;--duration:23s;--delay:-9.6s">✦</i><i style="--i:5;--duration:25s;--delay:-12s">✦</i><i style="--i:6;--duration:15s;--delay:-14.399999999999999s">❄</i><i style="--i:7;--duration:17s;--delay:-16.8s">✦</i><i style="--i:8;--duration:19s;--delay:-19.2s">✦</i><i style="--i:9;--duration:21s;--delay:-21.599999999999998s">❄</i><i style="--i:10;--duration:23s;--delay:-24s">✦</i><i style="--i:11;--duration:25s;--delay:-26.4s">✦</i><i style="--i:12;--duration:15s;--delay:-28.799999999999997s">❄</i><i style="--i:13;--duration:17s;--delay:-31.2s">✦</i><i style="--i:14;--duration:19s;--delay:-33.6s">✦</i></div>
   <img src="https://www.kagoshima-kankou.com/storage/special_feature_paragraph_contents/217/responsive_images/P9WWfF90NRlZM6Ur0wIQ5L2x16c2N4lR7fbdKb2A__716_478.jpeg" alt="화창한 날의 사쿠라지마와 센간엔">
   <div class="wrap hero-content">
-    <div class="eyebrow">Japan · Winter Golf & Family Trip</div>
+    <div class="xmas-trip-badge">🎄 MERRY CHRISTMAS · KAGOSHIMA 2026 ✨</div><div class="eyebrow">JAPAN · CHRISTMAS GOLF & FAMILY TRIP</div>
     <h1>KAGO<br><span class="accent">SHIMA.</span></h1>
-    <p class="hero-sub">골프 두 번, 사진도 맛집도.<br>가족 다섯 명의 겨울 가고시마.</p>
+    <p class="hero-sub">🎁 크리스마스에 떠나는 가족여행.<br>골프 두 번, 사진도 맛집도.</p>
     <div class="hero-tags">
       <span>📅 2026.12.25 FRI – 12.28 MON</span>
       <span>👨‍👩‍👧‍👦 5명</span>
