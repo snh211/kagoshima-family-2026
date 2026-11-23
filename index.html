@@ -178,6 +178,43 @@ html { scroll-padding-top: var(--sticky-total); }
 .g-section { scroll-margin-top: var(--sticky-total); }
 .g-section .g-kicker,.g-section h2 { scroll-margin-top: var(--sticky-total); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style><style id="weather-guide-2026">
+#guide-weather{position:relative;isolation:isolate}
+.w-weather-grid,.w-packing-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.w-live-card,.w-christmas-card{border-radius:21px;border:1px solid #e4d5b9;padding:19px;box-shadow:0 7px 24px #2b452116}
+.w-live-card{background:linear-gradient(140deg,#174535,#285946);color:#fff}
+.w-christmas-card{background:linear-gradient(140deg,#fff9e9,#fffdf7 66%,#f4f2de)}
+.w-card-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;font-size:12px;font-weight:900}
+.w-live-dot{font-size:10px;letter-spacing:.06em;background:#e5b96b;color:#20432e;border-radius:999px;padding:6px 9px}
+.w-climate-badge{font-size:10px;background:#f8e5c1;color:#855936;border-radius:999px;padding:6px 9px}
+.w-live-overview{display:flex;align-items:center;gap:16px;margin:20px 0 17px}
+.w-weather-emoji{font-size:48px;line-height:1}
+.w-live-temperature{display:block;font-size:clamp(42px,8vw,63px);font-weight:900;letter-spacing:-.07em;line-height:1.1;font-variant-numeric:tabular-nums}
+.w-live-condition{font-size:13px;color:#e7f4e7;margin-top:7px}
+.w-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.w-stat-grid>div{background:#ffffff16;border:1px solid #ffffff24;border-radius:12px;padding:11px}
+.w-stat-grid span,.w-temperature-grid span{display:block;font-size:11px;opacity:.85}
+.w-stat-grid strong,.w-temperature-grid strong{display:block;font-size:20px;font-weight:900;letter-spacing:-.03em;margin-top:5px}
+.w-update-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:16px}
+.w-update-row span{font-size:11px;color:#d9e9dd;line-height:1.5}
+.w-update-row button{cursor:pointer;border-radius:999px;background:#fff2d9;color:#2b5540;border:0;padding:9px 13px;font-size:12px;font-weight:900;white-space:nowrap}
+.w-footnote{font-size:10px;line-height:1.75;color:#c7dfce;margin-top:12px}
+.w-footnote a,.w-climate-source a,.w-forecast-tip a{font-weight:900;text-decoration:underline;text-underline-offset:3px}
+.w-climate-average{margin-top:22px;background:#ecf3e7;border-radius:16px;padding:15px 17px}
+.w-climate-average small{display:block;color:#427053;font-size:12px;font-weight:900}
+.w-climate-average strong{display:block;font-size:clamp(36px,7vw,55px);line-height:1.2;color:#244e3b;margin-top:5px;font-weight:900;letter-spacing:-.07em}
+.w-temperature-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.w-temperature-grid>div{background:#fff;border:1px solid #ecdfc7;border-radius:13px;padding:12px;color:#385746}
+.w-climate-message{color:#506b54;font-size:12px;line-height:1.8;margin-top:14px;font-weight:700}
+.w-climate-source{font-size:11px;line-height:1.8;color:#736f5e;margin-top:13px}
+.w-packing-title{margin:26px 0 14px;font-size:19px;font-weight:900;letter-spacing:-.05em;color:#224e3c}
+.w-packing-card{display:flex;gap:12px;border:1px solid #e8ddc7;border-radius:17px;padding:16px;background:#fffefa;min-width:0}
+.w-packing-icon{display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border-radius:12px;background:#f5ebd7;font-size:24px}
+.w-packing-card h3{font-size:15px;color:#2f5943;letter-spacing:-.04em}
+.w-packing-card p{font-size:12px;color:#677365;line-height:1.8;margin-top:6px}
+.w-forecast-tip{margin-top:14px;border:1px solid #edddbc;border-radius:15px;background:#fff3db;color:#745830;font-size:12px;line-height:1.8;padding:14px}
+@media(min-width:700px){.w-weather-grid,.w-packing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.w-live-card,.w-christmas-card{padding:24px}}
+@media(max-width:360px){.w-live-card,.w-christmas-card{padding:15px}.w-card-top{font-size:11px}.w-weather-emoji{font-size:40px}.w-live-temperature{font-size:41px}}
 </style></head>
 <body>
 <header class="header">
@@ -198,15 +235,44 @@ html { scroll-padding-top: var(--sticky-total); }
       <span>👨‍👩‍👧‍👦 5명</span>
       <span>⛳ 26 확정 · 27 요청</span>
     </div>
-    <a class="hero-link" href="#guide-day"><i>↓</i> 여행 보기</a>
+    <a class="hero-link" href="#guide-weather"><i>↓</i> 여행 보기</a>
   </div>
 </section>
 
 <div class="tabbar-wrap"><nav class="wrap tabbar" aria-label="여행 메뉴">
-<a href="#guide-day">🗓 날짜별 일정</a><a href="#guide-flights">✈️ 항공 스케줄</a><a href="#guide-stays">🏡 숙소</a><a href="#guide-golf">⛳ 골프장</a><a href="#guide-info">📍 위치+역사</a><a href="#guide-famous">🌋 꼭 봐야 할 곳</a><a href="#guide-shopping">🛍 쇼핑</a><a href="#guide-budget">💰 전체경비</a>
+<a href="#guide-weather">🌤️ 날씨·옷차림</a><a href="#guide-day">🗓 날짜별 일정</a><a href="#guide-flights">✈️ 항공 스케줄</a><a href="#guide-stays">🏡 숙소</a><a href="#guide-golf">⛳ 골프장</a><a href="#guide-info">📍 위치+역사</a><a href="#guide-famous">🌋 꼭 봐야 할 곳</a><a href="#guide-shopping">🛍 쇼핑</a><a href="#guide-budget">💰 전체경비</a>
 </nav></div>
 
 <main>
+<section class="g-section wrap" id="guide-weather">
+<div class="g-kicker">KAGOSHIMA · LIVE WEATHER & CHRISTMAS CLIMATE</div>
+<h2>🌤️ 가고시마 날씨 · 옷차림</h2>
+<p class="g-lead">지금 가고시마 날씨와 <b>12월 25일 크리스마스의 평년 기온</b>을 함께 봐요. 실제 여행일 예보는 출발 직전에 확인하면 돼요.</p>
+<div class="w-weather-grid">
+<article class="w-live-card">
+<div class="w-card-top"><span>📡 가고시마 시내 · 현재 날씨</span><span class="w-live-dot">LIVE</span></div>
+<div class="w-live-overview"><div class="w-weather-emoji" id="w-live-icon" aria-hidden="true">🌤️</div><div><span class="w-live-temperature" id="w-live-temp">--°</span><p id="w-live-condition" class="w-live-condition" aria-live="polite">날씨 불러오는 중…</p></div></div>
+<div class="w-stat-grid"><div><span>🌡 체감</span><strong id="w-live-feels">--°</strong></div><div><span>💨 풍속</span><strong id="w-live-wind">-- km/h</strong></div><div><span>⬆ 오늘 최고</span><strong id="w-live-max">--°</strong></div><div><span>⬇ 오늘 최저</span><strong id="w-live-min">--°</strong></div></div>
+<div class="w-update-row"><span id="w-updated-at">외부 기상 데이터 연결 중</span><button type="button" id="w-refresh" aria-label="현재 날씨 새로고침">↻ 새로고침</button></div>
+<p class="w-footnote">실시간 정보 제공: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo ↗</a> · 관측/모델 기반 참고값 · 날씨 정보는 화면을 열 때 갱신</p>
+</article>
+<article class="w-christmas-card">
+<div class="w-card-top"><span>🎄 12월 25일 · 크리스마스 평년값</span><span class="w-climate-badge">1991–2020</span></div>
+<div class="w-climate-average"><small>🌡 하루 평균 기온</small><strong>9.9°C</strong></div>
+<div class="w-temperature-grid"><div><span>☀️ 낮 최고</span><strong>14.5°C</strong></div><div><span>🌙 아침 최저</span><strong>5.9°C</strong></div></div>
+<p class="w-climate-message">낮에는 선선하지만 아침·저녁은 쌀쌀해요. 바람이 부는 골프장에서는 더 춥게 느껴질 수 있어요.</p>
+<div class="w-climate-source">📌 이 수치는 <b>2026년 12월 25일 예보가 아니라</b> 일본 기상청의 과거 30년 평년값이에요. <a href="https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_d.php?block_no=47827&amp;month=12&amp;prec_no=88" target="_blank" rel="noopener noreferrer">기상청 원자료 ↗</a></div>
+</article>
+</div>
+<div class="w-packing-title">🧥 겨울 가고시마 옷차림 가이드</div>
+<div class="w-packing-grid">
+<div class="w-packing-card"><div class="w-packing-icon">☀️</div><div><h3>낮 · 시내 관광</h3><p>긴팔 + 니트 또는 맨투맨 + 가벼운 코트·패딩. 실내외 온도 차에 맞춰 벗을 수 있도록 <b>겹쳐 입기</b> 추천.</p></div></div>
+<div class="w-packing-card"><div class="w-packing-icon">🌙</div><div><h3>아침 · 저녁</h3><p>경량 패딩이나 따뜻한 외투, 목도리 하나가 유용해요. 해가 지면 기온이 빠르게 내려갈 수 있어요.</p></div></div>
+<div class="w-packing-card"><div class="w-packing-icon">⛳</div><div><h3>12/26·27 골프</h3><p>히트텍·기능성 이너 + 긴팔 골프웨어 + <b>방풍 재킷</b> 조합. 장갑, 넥워머, 핫팩도 챙겨 두면 좋아요.</p></div></div>
+<div class="w-packing-card"><div class="w-packing-icon">☔</div><div><h3>가방 속 준비물</h3><p>접이식 우산, 방수 겉옷, 편한 운동화. 기리시마 산지·골프장은 시내보다 체감온도가 낮을 수 있어요.</p></div></div>
+</div>
+<div class="w-forecast-tip">✨ <b>여행 전 확인!</b> 12/25 당일 날씨는 아직 확정할 수 없어요. 출발에 가까워지면 이 페이지의 현재 날씨와 <a href="https://www.jma.go.jp/bosai/forecast/#area_type=offices&amp;area_code=460000" target="_blank" rel="noopener noreferrer">일본 기상청 예보 ↗</a>를 함께 확인해 주세요.</div>
+</section>
 <section class="g-section wrap" id="guide-day"><div class="g-kicker">DAY-BY-DAY TRIP</div><h2>🗓 날짜별 일정</h2><p class="g-lead">1일차부터 4일차까지 기본 동선과 추천 A·B·C를 나란히 확인하세요.</p>
 <div class="k-day-nav"><a href="#day-1">1일차</a><a href="#day-2">2일차</a><a href="#day-3">3일차</a><a href="#day-4">4일차</a></div>
 <div class="k-day-grid"><article class="k-day" id="day-1"><div class="k-day-head"><small>DAY 01 · 12월 25일 금요일</small><h3>✈️ 1일차</h3><p>가고시마 도착</p></div><div class="k-day-content"><div class="k-label">✅ 기본 동선</div><ol class="k-steps"><li>12:40 인천 출발 7C1823</li><li>14:15 가고시마 공항 도착</li><li>렌터카 인수 후 중앙역 이동</li><li>에어비앤비 체크인</li></ol><div class="k-label">📌 추천 일정</div><div class="k-day-abc"><div class="k-abc"><b>A</b><div><strong>중앙역 야경 · 흑돼지</strong><span>아뮤플라자 → 저녁 식사</span></div></div><div class="k-abc"><b>B</b><div><strong>텐몬칸 맛집 · 쇼핑</strong><span>텐몬칸 상점가 → 로컬 음식</span></div></div><div class="k-abc"><b>C</b><div><strong>시로야마 전망대</strong><span>시내 전망 → 저녁</span></div></div></div><div class="k-day-status">🏡 1·2일차 숙소: YokaYado 가고시마 중앙 · 결제완료</div><div class="k-actions"><a class="k-btn alt" href="https://www.airbnb.com.sg/rooms/1309010972546809959" target="_blank" rel="noopener noreferrer">숙소 상세 ↗</a></div></div></article><article class="k-day" id="day-2"><div class="k-day-head"><small>DAY 02 · 12월 26일 토요일</small><h3>⛳ 2일차</h3><p>이리키 시로야마 골프</p></div><div class="k-day-content"><div class="k-label">✅ 기본 동선</div><ol class="k-steps"><li>중앙역 숙소 출발 → 골프장 이동</li><li>10:22 첫 조 · 10:30 두 번째 조</li><li>2개 조 / 총 5명 · 라운딩 및 점심</li><li>시내 복귀 후 저녁</li></ol><div class="k-label">📌 추천 일정</div><div class="k-day-abc"><div class="k-abc"><b>A</b><div><strong>시로야마 전망대</strong><span>골프 → 전망대 → 저녁</span></div></div><div class="k-abc"><b>B</b><div><strong>텐몬칸 미식</strong><span>골프 → 흑돼지 식사</span></div></div><div class="k-abc"><b>C</b><div><strong>중앙역 쇼핑</strong><span>골프 → 역 쇼핑 → 휴식</span></div></div></div><div class="k-day-status">⛳ 2개 조 5명 예약 확인 · 10:22 / 10:30 확정</div><div class="k-actions"><a class="k-btn alt" href="https://maps.app.goo.gl/3fSGcqw4vw1EvnmNA?g_st=ac" target="_blank" rel="noopener noreferrer">골프장 지도 ↗</a><a class="k-btn alt" href="https://www.airbnb.com.sg/rooms/1309010972546809959" target="_blank" rel="noopener noreferrer">숙소 상세 ↗</a></div></div></article><article class="k-day" id="day-3"><div class="k-day-head"><small>DAY 03 · 12월 27일 일요일</small><h3>⛳ 3일차</h3><p>다카치오 골프 · 숙소 이동</p></div><div class="k-day-content"><div class="k-label">✅ 기본 동선</div><ol class="k-steps"><li>기존 에어비앤비 체크아웃 후 출발 (10시 전)</li><li>다카치오 GC 이동 · 10시경 희망(요청 중)</li><li>2인+3인 / 2개 조 · 골프</li><li>골프 후 기리시마 숙소 체크인</li></ol><div class="k-label">📌 추천 일정</div><div class="k-day-abc"><div class="k-abc"><b>A</b><div><strong>기리시마 신궁</strong><span>라운드 종료가 빠른 경우에만 방문</span></div></div><div class="k-abc"><b>B</b><div><strong>마루오 폭포</strong><span>해 지기 전 이동 가능하면 짧게 관람</span></div></div><div class="k-abc"><b>C</b><div><strong>숙소에서 저녁</strong><span>골프 → 숙소 체크인 → 저녁</span></div></div></div><div class="k-day-status">⛳ 2개 조 5명 예약 요청 중 · 10:00 희망, 확정 티오프 미정</div><div class="k-actions"><a class="k-btn alt" href="https://maps.app.goo.gl/GwGeNUVxg2vAryym6" target="_blank" rel="noopener noreferrer">골프장 지도 ↗</a><a class="k-btn alt" href="https://www.airbnb.co.kr/rooms/1760411991138287911?check_in=2026-12-27&amp;check_out=2026-12-28&amp;guests=5&amp;adults=5" target="_blank" rel="noopener noreferrer">🏡 에어비앤비 상세 ↗</a><a class="k-btn alt" href="https://maps.app.goo.gl/hjPkZWiUiefFhHtu7" target="_blank" rel="noopener noreferrer">숙소 지도 ↗</a></div></div></article><article class="k-day" id="day-4"><div class="k-day-head"><small>DAY 04 · 12월 28일 월요일</small><h3>🛫 4일차</h3><p>귀국</p></div><div class="k-day-content"><div class="k-label">✅ 기본 동선</div><ol class="k-steps"><li>기리시마 숙소 체크아웃</li><li>가레가와역 또는 아침 산책 (선택)</li><li>렌터카 반납 · 12:15 전후 공항 도착 목표</li><li>15:15 가고시마 출발 7C1824 → 17:05 인천</li></ol><div class="k-label">📌 추천 일정</div><div class="k-day-abc"><div class="k-abc"><b>A</b><div><strong>가레가와역</strong><span>목조 역사 감상 → 공항</span></div></div><div class="k-abc"><b>B</b><div><strong>기리시마 신궁</strong><span>아침 참배 → 공항</span></div></div><div class="k-abc"><b>C</b><div><strong>공항 쇼핑</strong><span>브런치 → 렌터카 반납 → 쇼핑</span></div></div></div><div class="k-day-status">🏡 3일차 숙소: 카드 결제 완료 · 12/28 체크아웃</div><div class="k-actions"><a class="k-btn alt" href="https://www.airbnb.co.kr/rooms/1760411991138287911?check_in=2026-12-27&amp;check_out=2026-12-28&amp;guests=5&amp;adults=5" target="_blank" rel="noopener noreferrer">🏡 에어비앤비 상세 ↗</a><a class="k-btn alt" href="https://maps.app.goo.gl/hjPkZWiUiefFhHtu7" target="_blank" rel="noopener noreferrer">숙소 위치 ↗</a><a class="k-btn alt" href="#guide-flights">항공편 ↓</a></div></div></article></div><p class="g-note">※ 12/27 다카치오 골프는 예약 요청 단계이며 10시 티오프가 확정된 것이 아닙니다. 중앙역에서 다카치오까지 이동 시간이 길어 체크아웃을 일찍 끝내는 동선으로 계획했어요.</p></section>
@@ -357,6 +423,59 @@ html { scroll-padding-top: var(--sticky-total); }
     requestAnimationFrame(syncFromHash);
     window.addEventListener('load', syncFromHash, { once: true });
   } else updateActive();
+})();
+</script><script id="kagoshima-open-meteo-live">
+(function(){
+  const $ = id => document.getElementById(id);
+  const refs=['w-live-temp','w-live-condition','w-live-feels','w-live-wind','w-live-max','w-live-min','w-updated-at','w-live-icon'];
+  if (!refs.every(id => $(id))) return;
+  const url='https://api.open-meteo.com/v1/forecast?latitude=31.5966&longitude=130.5571&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo&forecast_days=1';
+  const fmt = n => Number.isFinite(Number(n)) ? Math.round(Number(n))+'°' : '--°';
+  const weather = code => {
+    const c=Number(code);
+    if(c===0)return ['☀️','맑음'];
+    if(c<=2)return ['🌤️','대체로 맑음'];
+    if(c===3)return ['☁️','흐림'];
+    if(c===45||c===48)return ['🌫️','안개'];
+    if(c>=51&&c<=67)return ['🌦️','비'];
+    if(c>=71&&c<=77)return ['🌨️','눈'];
+    if(c>=80&&c<=82)return ['🌧️','소나기'];
+    if(c>=85&&c<=86)return ['🌨️','눈 소나기'];
+    if(c>=95)return ['⛈️','천둥·번개'];
+    return ['🌤️','기상 정보'];
+  };
+  async function refresh(){
+    const b=$('w-refresh');
+    if(b){b.disabled=true;b.textContent='↻ 확인 중';}
+    $('w-updated-at').textContent='현재 데이터 불러오는 중…';
+    try{
+      const ctl=new AbortController();
+      const timeout=setTimeout(()=>ctl.abort(),9000);
+      let response;
+      try{response=await fetch(url,{signal:ctl.signal,cache:'no-store'});}finally{clearTimeout(timeout);}
+      if(!response.ok)throw new Error('weather response '+response.status);
+      const data=await response.json();
+      if(!data.current||!data.daily)throw new Error('missing weather fields');
+      const c=data.current,d=data.daily;
+      const desc=weather(c.weather_code);
+      $('w-live-icon').textContent=desc[0];
+      $('w-live-temp').textContent=fmt(c.temperature_2m);
+      $('w-live-condition').textContent=desc[1];
+      $('w-live-feels').textContent=fmt(c.apparent_temperature);
+      $('w-live-wind').textContent=Number.isFinite(c.wind_speed_10m)?Math.round(c.wind_speed_10m)+' km/h':'-- km/h';
+      $('w-live-max').textContent=fmt(d.temperature_2m_max?.[0]);
+      $('w-live-min').textContent=fmt(d.temperature_2m_min?.[0]);
+      const local=String(c.time||'').replace('T',' ');
+      $('w-updated-at').textContent='현지 기준 '+(local||'시간 미제공')+' · 최신 관측/모델 데이터';
+    }catch(e){
+      $('w-live-condition').textContent='현재 날씨 연결에 실패했어요';
+      $('w-updated-at').textContent='인터넷 상태를 확인하거나 아래 출처를 눌러주세요.';
+    }finally{
+      if(b){b.disabled=false;b.textContent='↻ 새로고침';}
+    }
+  }
+  $('w-refresh')?.addEventListener('click',refresh);
+  refresh();
 })();
 </script></body>
 </html>
